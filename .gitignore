@@ -1,0 +1,6 @@
+*.swp
+composer.lock
+composer.phar
+vendor
+app/config.php
+ddl/backup.dump.gz
