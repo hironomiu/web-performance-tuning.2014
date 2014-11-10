@@ -24,7 +24,7 @@ $app->post('/exercise/part3',function() use($app) {
 
 $app->get('/exercise/part4',function() use($app) {
     $con = $app['db'];
-    $sql = 'select * from  message where title = ? order by created_at limit 10';
+    $sql = 'select * from  message where title = ? order by created_at desc limit 10';
     $sth = $con->prepare($sql);
     $sth->execute(array('チューニングバトル'));
     $results = $sth->fetchAll();
