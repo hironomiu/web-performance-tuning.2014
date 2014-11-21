@@ -1,22 +1,26 @@
-# 前提
-- 下記ミドルウェアが利用可能なこと
-MySQL
-Memcached
+# SetUp
+以下の構築は下記Vagrant環境を前提（その他の環境は適時修正すること）
+https://github.com/hironomiu/Vagrant-web-performance-tuning
+## clone
+```
+$ git clone git@github.com:hironomiu/web-performance-tuning.git
+or 
+$ git clone https://github.com/hironomiu/web-performance-tuning.git
+```
 
-# 構築
+## deploy & DB + Memcache setup 
 ```
 $ make install
 ```
 
-# セットアップ
-app/config.phpにDB接続(MySQL,Memcached)の設定をすること
+## tips
+### DB周りの接続設定
+https://github.com/hironomiu/Vagrant-web-performance-tuning以外の環境の場合app/config.phpにDB接続(MySQL,Memcached)の設定をすること
 ```
-$ cp app/config.php.template app/config.php
 $ vi app/config.php
 ```
 
-# 起動
-- BuiltInServerの起動
+### BuiltInServerを利用する場合
 任意のHOST、PORTを指定して起動
 ```
 $ HOST=xxx.xxx.xxx.xxx PORT=xxxx make server
